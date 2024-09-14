@@ -1,0 +1,47 @@
+display: flex;
+
+    justify-content. For item alignment on main axis.
+    align-items. For item alignment on cross axis.
+    align-self. For unique flex items on cross axis.
+    align-content. Used for packing flex lines and control over space.
+
+justify-content: center
+
+    centers the flexbox
+
+flex-wrap: wrap;
+
+    default is nowrap, which means items will span the entire width of the main axis
+    (wrap is best)
+
+flex-direction: column;
+
+    default is row - this changes the direction of the main axis, vertical (column) or horizontal (row)
+
+align-items: flex-end;
+
+    flex-end places them at the end of the axis (right) flex-start places them at the start of the axis (left)
+
+align-self: center;
+
+    can be used on individual items inside the flex.
+
+gap: 10px;
+
+    creates space between items along the main axis.
+    can also use:
+
+    row-gap
+    column-gap
+
+
+flex-grow, flex-shrink, flex-basis
+
+    together, these determine how the flexbox takes space, grows or shrinks based on the space available
+    these are sub-properties of a property called flex
+
+    flex: 0 1 auto;
+
+    0 is flex-grow
+    1 is flex-shrink
+    auto is flex-basis
