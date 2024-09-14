@@ -1,0 +1,58 @@
+body { 
+
+    display: grid; 
+
+    height: 200px; 
+
+    grid-template-areas: "head head" 
+
+                         "nav  main" 
+
+                         "footer  footer"; 
+
+    grid-template-rows: 10vh 80vh 10vh; 
+
+    grid-template-columns: 150px 1fr; 
+
+  } 
+
+   
+
+  header { 
+
+    grid-area: head; 
+
+    background-color: lightsalmon; 
+
+  } 
+
+   
+
+  .nav-bar { 
+
+    grid-area: nav; 
+
+    background-color: lightblue; 
+    height: 80vh;
+
+  } 
+
+   
+
+  main { 
+
+    grid-area: main; 
+
+    background-color: lightyellow; 
+    height: 80vh;
+  } 
+
+   
+
+   footer { 
+
+    grid-area: footer; 
+
+    background-color: firebrick; 
+    height: 10vh;
+  } 
