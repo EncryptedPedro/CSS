@@ -1,0 +1,125 @@
+REMEMBER
+
+    L V H A order
+
+    ::Link
+    ::Visited
+    ::Hover
+    ::Active
+
+
+
+Inline have the highest specificity
+    <p style=“color: white;”> 
+    p{color: blue} 
+
+IDs are next, represented by #
+    #div
+
+Classes, attributes, and pseudo-classes
+    Classes, and the attributes inside the selectors, come next with what is called the pseudo-classes that you will soon learn more about. 
+
+    For example:
+    .my-class 
+    p[“attribute”]
+    div:hover
+
+Calculating scores
+How to determine the score of a few selectors. 
+    #hello {} will be 0100
+    div {} will be 0001 and
+    div p.foo {} will be 0012
+
+    p  => 1 element =>  0 0 0 1 => Score: 1
+    div p => 2 elements => 0 0 0 2 => Score: 2
+    div p.foo {} => 2 elements and 1 class selector => 0 0 1 2 => Score: 12
+
+    p#bar => 1 element & 1 ID =>  0 1 0 1 => Score: 101
+    p.foo => 1 element & 1 class => 0 0 1 1 => Score: 11
+    p.p.foo => 1 element & 2 class =>  0 0 2 1 => Score: 21
+
+
+-----------
+Combination selectors
+(>) child selector
+    selects all elements that are the children of a specified element
+    div > p {}
+
+(~) general sibling selector
+    selects all elements that are next siblings of a specified element.
+    div ~ p {}
+
+(+) adjacent sibling selector
+    select an element that is directly after another specific element.
+    must have the same parent element, and "adjacent" means "immediately following".
+    div + p {}
+
+( ) descendant selector
+    matches all elements that are descendants of a specified element
+    div p {}
+
+
+----------
+PSEUDO classes
+
+SYNTAX:
+    selector::pseudo-element {
+        property: value;
+    }
+
+::first-letter
+    Example, this will change the color of the first letter on each li:
+    li::first-letter { 
+        color:coral; 
+        font-size: 1.3em; 
+        font-weight: bold; 
+        line-height: 1; 
+    } 
+
+::first-line
+    Example, this will change the color, etc of the first line on each li:
+    li::first-line {
+        color: lightseagreen;
+        text-decoration: underline;
+        line-height: 1;
+    }
+
+::selection
+    Example, this will change the color, etc of the selected lines on each li:
+    li::selection {
+        color:brown;
+        background-color: antiquewhite;
+        line-height: 1;
+    }
+
+::marker
+    Example, will change the color and content of the marker on each li:
+    li::marker {
+        color: cornflowerblue;
+        content: '<> ';
+        font-size: 1.1em;
+    }
+
+::before and ::after
+    add styled content before and after an element on which they are allowed
+    EXAMPLE, this will add "Tip:" before the content and "!!" afterwards:
+    <p id="tips"> Don't rinse your pasta after it is drained. </p>
+    #tips::before{
+        background: darkkhaki;
+        color:darkslategray;
+        content: "Tip:";
+        padding-left: 3px;
+        padding-right: 5px;
+        border-radius: 10%;
+    }
+
+    #tips::after{
+        background:darkkhaki;
+        color:darkslategray;
+        content: "!!";
+        padding-right: 5px;
+        border-radius: 20%;
+    }
+
+
+etc....
